@@ -23,7 +23,7 @@ spec:
             type: File
       containers:
         - name: hallo-node 
-          image: chesscorp/chess-club
+          image: falyan12/vite-vue:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
