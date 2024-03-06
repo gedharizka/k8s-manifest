@@ -16,8 +16,6 @@ spec:
       labels:
         run: hallo-node
     spec:
-    nodeSelector:
-      kubernetes.io/arch: arm
       containers:
         - name: hallo-node 
           image: falyan12/vite-vue:v1
