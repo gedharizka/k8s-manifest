@@ -23,7 +23,7 @@ spec:
             type: File
       containers:
         - name: hallo-node 
-          image: falyan12/hallo-node:latest
+          image: falyan12/hallo-node:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
