@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hallo-node-service
+  labels:
+    run: hallo-node
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30001
+    protocol: TCP
+    name: http
+  selector:
+    run: hallo-node

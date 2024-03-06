@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hallo-node-deployment
+  labels:
+    name: hallo-node
+spec:
+  replicas: 3
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      run: hallo-node
+  template:
+    metadata:
+      name: hallo-node
+      labels:
+        run: hallo-node
+    spec:
+      volumes:
+        - name: tz-config
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Jakarta
+            type: File
+      containers:
+        - name: hallo-node 
+          image: falyan12/hallo-node:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: tz-config
+              mountPath: /etc/localtime
