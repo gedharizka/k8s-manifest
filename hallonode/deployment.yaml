@@ -5,6 +5,8 @@ metadata:
   labels:
     name: hallo-node
 spec:
+nodeSelector:
+    kubernetes.io/arch: arm
   replicas: 1
   revisionHistoryLimit: 1
   selector:
