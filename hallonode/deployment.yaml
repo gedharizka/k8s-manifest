@@ -23,7 +23,7 @@ spec:
             type: File
       containers:
         - name: hallo-node 
-          image: docker pull chesscorp/chess-club
+          image: chesscorp/chess-club
           imagePullPolicy: Always
           ports:
             - containerPort: 80
