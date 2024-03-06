@@ -5,7 +5,7 @@ metadata:
   labels:
     name: hallo-node
 spec:
-  replicas: 3
+  replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -24,6 +24,13 @@ spec:
       containers:
         - name: hallo-node 
           image: falyan12/hallo-node:latest
+          resources:
+            requests:
+                memory: "64Mi"
+                cpu: "250m"
+            limits:
+                memory: "128Mi"
+                cpu: "500m"
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
