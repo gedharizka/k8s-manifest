@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hallo-node 
-          image: falyan12/vite-vue:v3
+          image: falyan12/php:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
