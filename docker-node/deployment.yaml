@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-node-deployment
+  labels:
+    name: docker-node
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      run: docker-node
+  template:
+    metadata:
+      name: docker-node
+      labels:
+        run: docker-node
+    spec:
+      containers:
+        - name: docker-node 
+          image: falyan12/docker-node:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: imagepullbackof
